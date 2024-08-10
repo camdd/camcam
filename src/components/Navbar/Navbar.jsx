@@ -1,19 +1,13 @@
 import React, { useState } from 'react';
 import { AppBar, Button, MenuList, MenuListItem, Separator, TextInput, Toolbar } from 'react95';
-import styled from 'styled-components';
 import './Navbar.css'
 import { Link } from 'react-router-dom';
-
-const Wrapper = styled.div`
-  padding: 5rem;
-  background: ${({ theme }) => theme.desktopBackground};
-`;
 
 function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <Wrapper>
+   
       <AppBar>
         <Toolbar style={{ justifyContent: 'space-between' }}>
           <div style={{ position: 'relative', display: 'inline-block' }}>
@@ -76,7 +70,7 @@ function Navbar() {
           <TextInput placeholder='Search...' width={150} />
         </Toolbar>
       </AppBar>
-    </Wrapper>
+   
   );
 }
 
