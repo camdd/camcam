@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { AppBar, Button, MenuList, MenuListItem, Separator, TextInput, Toolbar } from 'react95';
 import styled from 'styled-components';
+import './Navbar.css'
+import { Link } from 'react-router-dom';
 
 const Wrapper = styled.div`
   padding: 5rem;
@@ -31,23 +33,41 @@ function Navbar() {
                 }}
                 onClick={() => setOpen(false)}
               >
+
                 <MenuListItem>
+                  <Link to="/">
+                  <span role='img' aria-label='📁'>
+                    👾
+                  </span>
+                  home
+                  </Link>
+                </MenuListItem>
+
+                <MenuListItem>
+                  <Link to="/aboutme">  
                   <span role='img' aria-label='👨‍💻'>
                     👩🏻‍🚀
                   </span>
                   about me
+                  </Link>
                 </MenuListItem>
+
                 <MenuListItem>
+                  <Link to="/projects">
                   <span role='img' aria-label='📁'>
                     📁
                   </span>
                   projects
+                  </Link>
                 </MenuListItem>
+
                 <MenuListItem>
+                  <Link to="/blog">
                   <span role='img' aria-label='📁'>
                     👾
                   </span>
                   blog
+                  </Link>
                 </MenuListItem>
               </MenuList>
             )}
