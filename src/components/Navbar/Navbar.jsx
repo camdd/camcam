@@ -8,7 +8,7 @@ function Navbar() {
 
   return (
    
-      <AppBar style={{position:'relative'}}>
+      <AppBar style={{position:'relative', zIndex:'1'}}>
         <Toolbar style={{ justifyContent: 'space-between' }}>
           <div style={{ position: 'relative', display: 'inline-block' }}>
             <Button
