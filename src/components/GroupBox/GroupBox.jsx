@@ -1,14 +1,17 @@
 import { GroupBox, Window, WindowContent } from 'react95';
 
 
-export function GroupBoxDemo({children, label}) {
+export function GroupBoxDemo({ children, label }) {
   return (
-    <Window className='window'>
-      <WindowContent>
-        <GroupBox label={label}>
+    <div className='window' style={{padding:'4rem'}}>
+      <Window style={{display:'flex', flexDirection:'column'}}>
+        <WindowContent>
+          <GroupBox label={label}>
             {children}
-        </GroupBox>
-      </WindowContent>
-    </Window>
+          </GroupBox>
+        </WindowContent>
+      </Window>
+    </div>
+
   );
 }

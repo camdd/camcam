@@ -14,7 +14,6 @@ import styled from 'styled-components';
 import peggysPastels from 'react95/dist/themes/peggysPastels';
 
 const Wrapper = styled.div`
-  padding: 5rem;
   background: ${({ theme }) => theme.desktopBackground};
 `;
 
