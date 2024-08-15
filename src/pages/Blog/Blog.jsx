@@ -3,6 +3,7 @@ import axios from 'axios';
 import Layout from '../../layouts/Layout';
 import { GroupBoxDemo } from '../../components/GroupBox/GroupBox';
 import './Blog.css'
+import Pagination from '@mui/material/Pagination';
 
 export default function Blog() {
   const [posts, setPosts] = useState([]);
@@ -22,22 +23,16 @@ export default function Blog() {
       .catch(err => console.log('Error fetching posts: ' + err));
   }, []);
 
-
-
-
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
 
-
-  const handlePageChange = (page) => {
-    if (page >= 1 && page <= Math.ceil(posts.length / postsPerPage)) {
-      setCurrentPage(page);
-    }
+  const handlePageChange = (event, page) => {
+    setCurrentPage(page);
   };
 
   return (
-<Layout>
+    <Layout>
       <h1>Posts</h1>
       {currentPosts.map(post => (
         <GroupBoxDemo key={post._id} label={post.title}>
@@ -45,19 +40,17 @@ export default function Blog() {
           <p><strong>Date:</strong> {formatDate(post.date)}</p>
         </GroupBoxDemo>
       ))}
-      <div className="pagination">
-        <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>
-          Previous
-        </button>
-        <span> Page {currentPage} of {Math.ceil(posts.length / postsPerPage)} </span>
-        <button onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === Math.ceil(posts.length / postsPerPage)}>
-          Next
-        </button>
-      </div>
+      <Pagination
+        className='pagination'
+        count={Math.ceil(posts.length / postsPerPage)}
+        page={currentPage}
+        onChange={handlePageChange}
+        color="primary"
+        shape="rounded"
+      />
     </Layout>
   );
 }
-
 
 const formatDate = (dateString) => {
   if (!dateString) return 'Date not available';
@@ -65,3 +58,4 @@ const formatDate = (dateString) => {
   if (isNaN(date.getTime())) return 'Invalid date';
   return date.toLocaleDateString('es-ES');
 };
+
