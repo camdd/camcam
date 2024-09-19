@@ -22,9 +22,6 @@ export default function Aboutme() {
             🌱 I’m always learning new skills and technologies: I study Electronic Arts at UNTREF.
             <br />
 
-            💻 One of my most enjoyable professional experiences was working on Fleek as a frontend developer.
-            <br />
-
             👯 I’m looking to collaborate on innovative projects that can positively impact society.
             <br />
 
