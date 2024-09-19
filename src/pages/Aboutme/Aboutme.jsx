@@ -19,9 +19,6 @@ export default function Aboutme() {
             🔭 I’m currently working on creating projects that aim to make a difference and promote accessibility, especially for neurodivergent individuals.
             <br />
 
-            🌱 I’m always learning new skills and technologies: I study Electronic Arts at UNTREF.
-            <br />
-
             👯 I’m looking to collaborate on innovative projects that can positively impact society.
             <br />
 
